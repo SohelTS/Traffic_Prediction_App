@@ -1,5 +1,5 @@
 # 🚦Traffic_Prediction_App
-A research-based practice project where a model of traffic congestion prediction was constructed by using machine learning classification algorithm - random forest and Support Vector  Regression.
+Research-based project that builds a traffic congestion prediction system using machine learning algorithms — Random Forest and Support Vector Regression (SVR). The trained model is deployed via a Flask web application that allows users to input parameters like day, weather, temperature, and zone to get real-time traffic level predictions along with descriptive feedback through a clean web interface.
 
 ## 📊 About the Dataset
 
