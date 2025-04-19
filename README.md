@@ -52,4 +52,29 @@ The dataset includes various features recorded over different zones and dates to
 
 ---
 
-> ✨ This project demonstrates how day, temperature, zone, and weather can be leveraged to build predictive models for real-world traffic behavior using supervised learning.
+## 🌐 Flask Web Application
+
+A lightweight web app built using Flask lets users input prediction parameters through a clean UI and get instant traffic level predictions.
+
+### 🔧 Inputs on the UI:
+- Coded Day (1–7)
+- Temperature (°C)
+- Weather (numeric code)
+- Month (1–12)
+- Day of the Month (1–31)
+- Zone number (1–144)
+
+###  Backend Logic:
+- Loads a trained Random Forest model (`best_model.pkl`)
+- Applies a `StandardScaler` (`scaler.pkl`) to normalize inputs
+- Predicts traffic level (1–5) and maps it to human-readable descriptions like "Low Traffic", "High Traffic", etc.
+
+---
+
+## 🚀 How to Run the App 🚀
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SohelTS/Traffic_Prediction_App.git
+cd Traffic_Prediction_App
