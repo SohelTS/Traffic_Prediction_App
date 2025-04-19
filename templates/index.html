@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Traffic Predictor</title>
+    <style>
+      body { 
+        max-width: 900px;
+        margin: 5vh auto;
+        
+        font-family: sans-serif;
+        background-image: url("/static/traffic_image.avif");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #0e0e0e;
+      }
+      
+      label, input {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      
+      button {
+        padding: 0.5rem 1rem;
+      }
+      
+      .result {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+      }
+      
+      form {
+        background-color: rgba(246, 239, 239, 0.6); 
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .title-box {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="title-box">
+      <h1>Congestion/Predict Traffic Level</h1>
+    </div>
+    
+    <form method="post">
+      <label>Coded Day (1–7):
+        <input name="coded_day" type="number" min="1" max="7" required value="{{ form_data.coded_day }}">
+      </label>
+      <label>Temperature (°C):
+        <input name="temperature" type="number" step="0.1" required value="{{ form_data.temperature }}">
+      </label>
+      <label>Weather (numeric code):
+        <input name="weather" type="number" required value="{{ form_data.weather }}">
+      </label>
+      <label>Month (1–12):
+        <input name="month" type="number" min="1" max="12" required value="{{ form_data.month }}">
+      </label>
+      <label>Day of Month (1–31):
+        <input name="day_of_month" type="number" min="1" max="31" required value="{{ form_data.day_of_month }}">
+      </label>
+      <label>Zone (1–144):
+        <input name="zone" type="number" min="1" max="144" required value="{{ form_data.zone }}">
+      </label>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if error %}
+      <div class="result" style="color: red;">
+        {{ error }}
+      </div>
+    {% endif %}
+    {% if prediction is not none %}
+    <div class="result">
+      <strong>Predicted Traffic Level:</strong> {{ prediction }}<br>
+      <em>Description:</em> {{ description }}
+    </div>
+  {% endif %}
+  </body>
+</html>
