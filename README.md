@@ -71,10 +71,3 @@ A lightweight web app built using Flask lets users input prediction parameters t
 
 ---
 
-## 🚀 How to Run the App 🚀
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/SohelTS/Traffic_Prediction_App.git
-cd Traffic_Prediction_App
